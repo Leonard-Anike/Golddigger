@@ -3,7 +3,6 @@
 **GoldDigger** is a sleek Node.js-based web application that allows users to invest in gold securely and instantly.  
 Users can input their investment amount, view the corresponding gold quantity based on live pricing, and receive a detailed confirmation email automatically.
 
----
 
 ## ✨ Features
 
@@ -13,7 +12,6 @@ Users can input their investment amount, view the corresponding gold quantity ba
 - 🔐 Secure configuration using environment variables (`.env`)  
 - 🧩 Modular architecture (clean separation between logic, utilities, and data)
 
----
 
 ## 🧠 Tech Stack
 
@@ -24,11 +22,9 @@ Users can input their investment amount, view the corresponding gold quantity ba
 | Email | Nodemailer (Gmail App Password) |
 | Deployment | Render |
 
----
 
 ## 🗂️ Project Structure
 
-.
 ├── data/ # Gold price data & purchase logs
 │ ├── prices.js
 │ └── purchasedData.jsonl
