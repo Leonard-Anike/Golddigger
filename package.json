@@ -1,0 +1,17 @@
+{
+  "name": "golddigger",
+  "version": "1.0.0",
+  "description": "trade gold at the comfort of your home",
+  "license": "ISC",
+  "author": "Leonard",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@getbrevo/brevo": "^3.0.1",
+    "dotenv": "^17.2.3",
+    "mime": "^4.1.0"
+  }
+}
