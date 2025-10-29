@@ -3,7 +3,7 @@ import { parseJSONBody } from '../utils/parseJSONBody.js'
 import { sendResponse } from '../utils/sendRespose.js'
 import { addNewPurchasedData } from '../utils/addNewPurchasedData.js'
 import { sendPurchaseEmail } from '../utils/sendPurchaseEmail.js'
-
+import { getAllPurchasedData } from "../utils/renderPurchasedPath.js";
 
 /**
  * Handles Server-Sent Events (SSE) connection to stream live price updates to the client.
@@ -97,4 +97,19 @@ export async function handlePost (req, res) {
         // Handle and report any unexpected server or processing errors
         sendResponse(res, 500, 'application/json', JSON.stringify({error: err.message || 'Server error'}))
     }
+}
+
+export async function handleRenderGet(req, res) {
+
+    try {
+        const purchasedData = await getAllPurchasedData();
+
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify(purchasedData));
+
+    } catch (err) {
+        res.writeHead(500, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ error: err.message || "Server error" }));
+    }
+
 }
