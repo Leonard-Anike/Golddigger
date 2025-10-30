@@ -1,19 +1,13 @@
 import 'dotenv/config'
 import http from 'node:http'
 import { serveStatic } from './utils/serveStatic.js'
-import { handlePrices, handlePost, handleRenderGet } from './handlers/routeHandlers.js'
+import { handlePrices, handlePost } from './handlers/routeHandlers.js'
 
 const PORT = process.env.PORT || 3000;
 
 const __dirname = import.meta.dirname
 
 const server = http.createServer( async (req, res) => {
-
-    if (req.url === '/api/debug/data' && req.method === 'GET') {
-
-        return await handleRenderGet(req, res)
-
-    }
    
     if (req.url === '/api' && req.method === 'POST') {
 
